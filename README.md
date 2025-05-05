@@ -1,90 +1,76 @@
-# CodeOrb
+# Repositório de Estudos em Desenvolvimento Moderno de Software
 
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
+## Introdução
 
-✨ Your new, shiny [Nx workspace](https://nx.dev) is almost ready ✨.
+Bem-vindo(a) a este repositório! O objetivo deste projeto é centralizar todo o código, documentação e aprendizados adquiridos durante o estudo de tecnologias e práticas essenciais no desenvolvimento moderno de software[cite: 1]. O conteúdo aqui presente segue o roteiro do "Plano de Estudo Abrangente para Desenvolvimento Moderno de Software"[cite: 1].
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/nx-api/js?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+Este repositório utiliza uma estrutura de **monorepo** gerenciada com **NX** para organizar os diferentes projetos e áreas de estudo, abrangendo backend, frontend, infraestrutura, e mais.
 
-## Finish your CI setup
+## Estrutura do Monorepo (Gerenciado com NX)
 
-[Click here to finish setting up your workspace!](https://cloud.nx.app/connect/hbTkJmw1zi)
+A estrutura de pastas visa refletir as principais áreas do plano de estudo, facilitando a navegação e a organização:
 
+/
+├── apps/                  # Aplicações completas ou exemplos principais
+│   ├── backend-api/
+│   └── frontend-ui/
+├── libs/                  # Bibliotecas compartilhadas e módulos de estudo
+│   ├── 01-ai-ides/        # Exemplos e notas sobre IA em IDEs (Cursor)
+│   ├── 02-devops-iac/     # Dockerfiles, manifests K8s, configs Terraform
+│   │   ├── docker/
+│   │   ├── kubernetes/
+│   │   └── terraform/
+│   ├── 03-architecture/   # Implementações de padrões (MVC, Hexagonal, Clean, Multi-Tenancy)
+│   │   ├── mvc-example/
+│   │   ├── hexagonal-example/
+│   │   ├── clean-arch-example/
+│   │   └── multi-tenancy-concepts/
+│   ├── 04-api-design/     # Exemplos de APIs REST, gRPC e configurações de Gateway
+│   │   ├── rest-api-example/
+│   │   ├── grpc-service-example/
+│   │   └── api-gateway-configs/
+│   └── shared/            # Código compartilhado entre libs ou apps
+├── tools/                 # Scripts e ferramentas auxiliares
+└── docs/                  # Documentação adicional, incluindo este README
+└── plano-de-estudo.md # (Opcional: Cópia ou resumo do plano original)
 
-## Generate a library
+* **`/apps`**: Contém aplicações completas ou exemplos de ponta a ponta que integram vários conceitos estudados.
+* **`/libs`**: O coração do estudo, onde cada subdiretório corresponde a uma seção principal do plano de estudo[cite: 4, 5, 6, 7]. Aqui você encontrará implementações de código, configurações, notas e exemplos específicos para cada tópico.
+* **`/tools`**: Utilitários e scripts de apoio ao desenvolvimento ou execução dos exemplos.
+* **`/docs`**: Documentação geral, diagramas, e este README.
 
-```sh
-npx nx g @nx/js:lib packages/pkg1 --publishable --importPath=@my-org/pkg1
-```
+## Conteúdo e Áreas de Estudo
 
-## Run tasks
+Este repositório abrange as seguintes áreas principais, conforme o plano de estudo:
 
-To build the library use:
+1. **Aproveitando a IA para Aprimorar o Fluxo de Trabalho com IDEs (Cursor)**[cite: 4]: Exploração e exemplos de como usar IDEs potencializadas por IA, como o Cursor, para acelerar o desenvolvimento, gerar código, depurar e refatorar[cite: 11, 13, 17, 18].
+    * Localização: `libs/01-ai-ides/`
+2. **Dominando Containers, Orquestração e Pipelines de IaC**[cite: 5]: Estudo prático de Docker para containerização, Kubernetes (K8s) para orquestração e Terraform para Infraestrutura como Código [IaC](cite: 38, 67, 98).
+    * Docker: Criação de imagens, Dockerfiles, Docker Compose[cite: 44, 45, 64].
+    * Kubernetes: Conceitos (Pods, Deployments, Services), kubectl, escalonamento[cite: 78, 81, 83, 89, 96].
+    * Terraform: Provisionamento de infraestrutura, gerenciamento de estado, integração com K8s[cite: 99, 108, 111].
+    * Localização: `libs/02-devops-iac/`
+3. **Explorando Padrões Modernos de Arquitetura de Software**[cite: 6]: Análise e implementação de padrões arquiteturais para construir sistemas robustos, testáveis e manuteníveis.
+    * MVC [Model-View-Controller](cite: 130, 131, 132).
+    * Arquitetura Hexagonal [Ports and Adapters](cite: 135).
+    * Clean Architecture[cite: 150].
+    * Multi-Tenancy: Estratégias e desafios[cite: 178, 180].
+    * Localização: `libs/03-architecture/`
+4. **Design Avançado de APIs e Tecnologias**[cite: 7]: Cobertura de princípios de design de API, tecnologias e padrões.
+    * Princípios de Design de API: Consistência, orientação a recursos, tratamento de erros, versionamento[cite: 211].
+    * APIs RESTful: Restrições, melhores práticas, métodos HTTP[cite: 222, 232, 233, 234, 235, 236].
+    * gRPC: Protocol Buffers, HTTP/2, streaming, comparação com REST[cite: 239, 240, 241, 247].
+    * API Gateway: Papel, funcionalidades (roteamento, segurança, rate limiting), padrões[cite: 252, 255].
+    * Localização: `libs/04-api-design/`
 
-```sh
-npx nx build pkg1
-```
+## Como Usar
 
-To run any task with Nx use:
+* Clone o repositório.
+* Certifique-se de ter o Node.js e o NX CLI instalados.
+* Explore as pastas `libs/` para encontrar código e notas sobre cada tópico de estudo.
+* Execute os exemplos ou aplicações encontrados em `apps/` seguindo as instruções específicas de cada projeto (geralmente em um README dentro da pasta do app/lib).
+* Utilize os comandos NX para build, teste e execução (ex: `nx build backend-api`, `nx serve frontend-ui`, `nx test shared`).
 
-```sh
-npx nx <target> <project-name>
-```
+## Aprendizado Contínuo
 
-These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
-
-[More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Versioning and releasing
-
-To version and release the library use
-
-```
-npx nx release
-```
-
-Pass `--dry-run` to see what would happen without actually releasing the library.
-
-[Learn more about Nx release &raquo;](hhttps://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Keep TypeScript project references up to date
-
-Nx automatically updates TypeScript [project references](https://www.typescriptlang.org/docs/handbook/project-references.html) in `tsconfig.json` files to ensure they remain accurate based on your project dependencies (`import` or `require` statements). This sync is automatically done when running tasks such as `build` or `typecheck`, which require updated references to function correctly.
-
-To manually trigger the process to sync the project graph dependencies information to the TypeScript project references, run the following command:
-
-```sh
-npx nx sync
-```
-
-You can enforce that the TypeScript project references are always in the correct state when running in CI by adding a step to your CI job configuration that runs the following command:
-
-```sh
-npx nx sync:check
-```
-
-[Learn more about nx sync](https://nx.dev/reference/nx-commands#sync)
-
-
-[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Install Nx Console
-
-Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
-
-[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Useful links
-
-Learn more:
-
-- [Learn more about this workspace setup](https://nx.dev/nx-api/js?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects)
-- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-And join the Nx community:
-- [Discord](https://go.nx.dev/community)
-- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
-- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
-- [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+Este repositório é um trabalho em progresso e será atualizado conforme o aprendizado avança[cite: 300]. Sinta-se à vontade para explorar, aprender e contribuir!

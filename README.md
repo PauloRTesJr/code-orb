@@ -10,7 +10,8 @@ Este repositório utiliza uma estrutura de **monorepo** gerenciada com **NX** pa
 
 A estrutura de pastas visa refletir as principais áreas do plano de estudo, facilitando a navegação e a organização:
 
-/
+```
+.
 ├── apps/                  # Aplicações completas ou exemplos principais
 │   ├── backend-api/
 │   └── frontend-ui/
@@ -31,8 +32,9 @@ A estrutura de pastas visa refletir as principais áreas do plano de estudo, fac
 │   │   └── api-gateway-configs/
 │   └── shared/            # Código compartilhado entre libs ou apps
 ├── tools/                 # Scripts e ferramentas auxiliares
-└── docs/                  # Documentação adicional, incluindo este README
-└── plano-de-estudo.md # (Opcional: Cópia ou resumo do plano original)
+├── docs/                  # Documentação adicional, incluindo este README
+└── plano-de-estudo.md    # (Opcional: Cópia ou resumo do plano original)
+```
 
 * **`/apps`**: Contém aplicações completas ou exemplos de ponta a ponta que integram vários conceitos estudados.
 * **`/libs`**: O coração do estudo, onde cada subdiretório corresponde a uma seção principal do plano de estudo[cite: 4, 5, 6, 7]. Aqui você encontrará implementações de código, configurações, notas e exemplos específicos para cada tópico.
